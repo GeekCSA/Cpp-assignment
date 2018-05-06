@@ -11,9 +11,6 @@ CircularInt::CircularInt(int mini, int maxi,int currenti): min(mini),max(maxi),c
 
 int CircularInt::Normalization(int min, int max, int current){
 
-	// current -= min;
-	// current %= (max-min + 1);
-	// current += min;
 	while(current > max){
 		current = current - numOfElements;
 	}
@@ -75,8 +72,6 @@ CircularInt& CircularInt::operator/=(int num) {
 	throw std::invalid_argument("There is no number x in this range such that x*i=current\n" );
 
 }
-//TODO check
-
 
 CircularInt& CircularInt::operator+=(const CircularInt& cirInt1){
 	current += cirInt1.current;
@@ -498,8 +493,6 @@ CircularInt& CircularInt::operator~(){
 	current = Normalization(min,max,~current);
 	return *this;
 }
-//
-////the user can enter the current time
 
 std::istream& operator>>(std::istream & is,CircularInt &ci) {
 	//Todo check for valid input
