@@ -20,11 +20,11 @@ Where a is the "small" end of the range and b is the large end of the range.
 
 As with any standard account, all existing transactions are considered in the account
 
- * The usual account: +, -, *, /,%
- * Actions increase and decrease: ++, -
- * Actions on bits: &, |, ^, ~, >>, <<,
- * Deactivation: -
- * Comparison operations between two numbers: ==, = =, <,>, <=,> =
+* The usual account: +, -, *, /,%
+* Actions increase and decrease: ++, -
+* Actions on bits: &, |, ^, ~, >>, <<,
+* Deactivation: -
+* Comparison operations between two numbers: ==, = =, <,>, <=,> =
 
  Each of the actions also has an assignment function accordingly.
 
