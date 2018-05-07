@@ -8,7 +8,7 @@
 #ifndef CELL_H_
 #define CELL_H_
 
-//#include "Coordinate.h"
+#include "IllegalCharException.h"
 
 class Cell{
 

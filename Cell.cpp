@@ -75,10 +75,13 @@ Cell& Cell::operator=(const Cell& c){
 	return *this;
 }
 
-Cell& Cell::operator=(const char s){
-	status = s;
-
-	return *this;
+Cell& Cell::operator=(const char c){
+	if(c == '.' || c == 'X' || c == 'O'){
+		status = c;
+		return *this;
+	}
+	else
+		throw IllegalCharException(c);
 }
 
 

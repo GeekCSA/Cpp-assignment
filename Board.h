@@ -13,6 +13,7 @@
 #include <stdlib.h>
 
 #include "Cell.h"
+#include "IllegalCoordinateException.h"
 
 class Board{
 private:

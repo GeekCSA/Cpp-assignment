@@ -83,13 +83,13 @@ Board& Board::operator=(const char c){
 		return *this;
 	}
 	else
-		throw std::invalid_argument( "Incorrect value\n" );
+		throw IllegalCharException(c);
 
 }
 
 char Board::operator[](const Cell& c) const{
 	if((c.getX() >= tableSize) || (c.getY() >= tableSize))
-		throw std::invalid_argument( "Location outside array boundaries\n" );
+		throw IllegalCoordinateException(c.getX(),c.getY());
 	else{
 		int x = c.getX();
 		int y = c.getY();
@@ -99,8 +99,9 @@ char Board::operator[](const Cell& c) const{
 }
 
 Cell& Board::operator[](const Cell& c){
-	if((c.getX() >= tableSize) || (c.getY() >= tableSize))
-		throw std::invalid_argument( "Location outside array boundaries\n" );
+	if((c.getX() >= tableSize) || (c.getY() >= tableSize)){
+		throw IllegalCoordinateException(c.getX(),c.getY());
+	}
 	else{
 		int x = c.getX();
 		int y = c.getY();
