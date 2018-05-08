@@ -25,8 +25,8 @@ public:
 	const std::string theCoordinate() const{
 
 //		x + "," + y;
-
-		return x + "," + y;
+		return std::to_string(x) + "," + std::to_string(y);
+//		return x + "," + y;
 	}
 
 };
