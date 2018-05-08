@@ -107,6 +107,3 @@ Cell& Cell::operator=(const char c){
 //	return is;
 //
 //}
-
-
-

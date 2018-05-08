@@ -59,7 +59,7 @@ std::ostream & operator<<(std::ostream& os, const Board& b){
 	return os;
 }
 
-Board& Board::operator=(const Board& b){//TODO if correct
+Board& Board::operator=(const Board& b){
 
 	if(b.tableSize != tableSize){
 		free();
@@ -109,6 +109,3 @@ Cell& Board::operator[](const Cell& c){
 		return board[y][x];
 	}
 }
-
-
-

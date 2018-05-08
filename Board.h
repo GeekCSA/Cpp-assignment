@@ -29,6 +29,7 @@ private:
 public:
 	Board(int);
 	Board(const Board&);
+
 	~Board();
 
     friend std::istream & operator>>(std::istream&, const Board&);
