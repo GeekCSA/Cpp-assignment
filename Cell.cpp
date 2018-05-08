@@ -5,11 +5,11 @@
  *      Author: mcsa
  */
 
-using namespace std;
+
 
 #include <iostream>
 #include "Cell.h"
-
+using namespace std;
 Cell::Cell(){
 
 	x_location = 0;
@@ -107,3 +107,6 @@ Cell& Cell::operator=(const char c){
 //	return is;
 //
 //}
+
+
+

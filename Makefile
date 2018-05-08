@@ -1,11 +1,14 @@
-a: main.o Cell.o Board.o
-	clang++-5.0 main.o Cell.o Board.o -o a
 
-main.o: main.cpp
-	clang++-5.0 -std=c++14 -c main.cpp
+CXX=clang++-5.0
+CXXFLAGS=-std=c++14 -Wall -Werror -Wvla
 
-Cell.o:
-	clang++-5.0 -c Cell.cpp
+all: Board.o Cell.o main.o
 
-Board.o:
-	clang++-5.0 -c Board.cpp
+Board.o: Board.cpp Board.h
+	$(CXX) $(CXXFLAGS) -c Board.cpp -o Board.o
+
+Cell.o: Cell.cpp Cell.h
+	$(CXX) $(CXXFLAGS) -c Cell.cpp -o Cell.o
+
+clean:
+	rm *.o 
