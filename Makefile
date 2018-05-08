@@ -1,4 +1,3 @@
-
 CXX=clang++-5.0
 CXXFLAGS=-std=c++14 -Wall -Werror -Wvla
 
