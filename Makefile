@@ -3,6 +3,7 @@ CXX=clang++-5.0
 CXXFLAGS=-std=c++14 -Wall -Werror -Wvla
 
 all: Board.o Cell.o main.o
+	$(CXX) Board.o Cell.o main.o -o a.out
 
 Board.o: Board.cpp Board.h
 	$(CXX) $(CXXFLAGS) -c Board.cpp -o Board.o
