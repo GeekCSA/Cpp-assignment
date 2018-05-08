@@ -2,7 +2,7 @@
  * cell.h
  *
  *  Created on: May 3, 2018
- *      Author: mcsa
+ *      Author: Moshe and Nissan
  */
 
 #ifndef CELL_H_

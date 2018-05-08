@@ -2,7 +2,7 @@
  * Board.cpp
  *
  *  Created on: May 3, 2018
- *      Author: mcsa
+ *      Author: Moshe and Nissan
  */
 
 #include "Board.h"
@@ -74,7 +74,7 @@ Board& Board::operator=(const Board& b){
 	return *this;
 }
 
-Board& Board::operator=(const char c){
+Board& Board::operator=(const char c) throw (IllegalCharException){
 
 	if(c == '.' || c == 'X' || c == 'O'){
 		for(int i = 0; i < tableSize; i++)
@@ -87,7 +87,7 @@ Board& Board::operator=(const char c){
 
 }
 
-char Board::operator[](const Cell& c) const{
+char Board::operator[](const Cell& c) const throw (IllegalCoordinateException){
 	if((c.getX() >= tableSize) || (c.getY() >= tableSize))
 		throw IllegalCoordinateException(c.getX(),c.getY());
 	else{
@@ -98,7 +98,7 @@ char Board::operator[](const Cell& c) const{
 	}
 }
 
-Cell& Board::operator[](const Cell& c){
+Cell& Board::operator[](const Cell& c) throw (IllegalCoordinateException){
 	if((c.getX() >= tableSize) || (c.getY() >= tableSize)){
 		throw IllegalCoordinateException(c.getX(),c.getY());
 	}

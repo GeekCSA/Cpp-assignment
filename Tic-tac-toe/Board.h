@@ -2,7 +2,7 @@
  * Board.h
  *
  *  Created on: May 3, 2018
- *      Author: mcsa
+ *      Author: Moshe and Nissan
  */
 
 #ifndef BOARD_H_
@@ -36,10 +36,10 @@ public:
     friend std::ostream & operator<<(std::ostream&, const Board&);
 
     Board& operator=(const Board&);
-    Board& operator=(const char);
+    Board& operator=(const char) throw (IllegalCharException);
 
-    char operator[](const Cell&) const;
-    Cell& operator[](const Cell&);
+    char operator[](const Cell&) const throw (IllegalCoordinateException);
+    Cell& operator[](const Cell&) throw (IllegalCoordinateException);
 };
 
 

@@ -2,7 +2,7 @@
  * IllegalCoordinateException.h
  *
  *  Created on: May 6, 2018
- *      Author: mcsa
+ *      Author: Moshe and Nissan
  */
 
 #ifndef ILLEGALCOORDINATEEXCEPTION_H_
