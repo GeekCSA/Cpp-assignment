@@ -2,7 +2,7 @@
  * IllegalCoordinateException.h
  *
  *  Created on: May 6, 2018
- *      Author: Moshe and Nissan
+ *      Author: mcsa
  */
 
 #ifndef ILLEGALCOORDINATEEXCEPTION_H_
@@ -24,7 +24,9 @@ public:
 
 	const std::string theCoordinate() const{
 
-		return std::to_string(x) + "," + std::to_string(y);
+//		x + "," + y;
+//		return std::to_string(x) + "," + std::to_string(y);
+		return "hahaha";
 	}
 
 };

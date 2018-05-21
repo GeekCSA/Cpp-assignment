@@ -2,17 +2,17 @@
  * Board.cpp
  *
  *  Created on: May 3, 2018
- *      Author: Moshe and Nissan
+ *      Author: mcsa
  */
 
 #include "Board.h"
 using namespace std;
 
-Board::Board(int size){
+Board::Board(uint size){
 	create(size);
 
-	for (int i = 0; i < size; ++i) {
-		for (int j = 0; j < size; ++j) {
+	for (int i = 0; i < tableSize; ++i) {
+		for (int j = 0; j < tableSize; ++j) {
 			board[i][j] = Cell(i,j);
 		}
 	}
@@ -29,7 +29,7 @@ Board::Board(const Board& b){
 	}
 }
 
-void Board::create(int size){
+void Board::create(uint size){
 	tableSize = size;
 
 	//Create 2D array of cells
@@ -59,7 +59,7 @@ std::ostream & operator<<(std::ostream& os, const Board& b){
 	return os;
 }
 
-Board& Board::operator=(const Board& b){
+Board& Board::operator=(const Board& b){//TODO if correct
 
 	if(b.tableSize != tableSize){
 		free();
@@ -74,7 +74,7 @@ Board& Board::operator=(const Board& b){
 	return *this;
 }
 
-Board& Board::operator=(const char c) throw (IllegalCharException){
+Board& Board::operator=(const char c){
 
 	if(c == '.' || c == 'X' || c == 'O'){
 		for(int i = 0; i < tableSize; i++)
@@ -87,25 +87,32 @@ Board& Board::operator=(const char c) throw (IllegalCharException){
 
 }
 
-char Board::operator[](const Cell& c) const throw (IllegalCoordinateException){
-	if((c.getX() >= tableSize) || (c.getY() >= tableSize))
-		throw IllegalCoordinateException(c.getX(),c.getY());
+char Board::operator[](const Coordinate& c) const{
+	if((c.x >= tableSize) || (c.y >= tableSize))
+		throw IllegalCoordinateException(c.x,c.y);
 	else{
-		int x = c.getX();
-		int y = c.getY();
+		int x = c.x;
+		int y = c.y;
 
 		return board[y][x].getStatus();
 	}
 }
 
-Cell& Board::operator[](const Cell& c) throw (IllegalCoordinateException){
-	if((c.getX() >= tableSize) || (c.getY() >= tableSize)){
-		throw IllegalCoordinateException(c.getX(),c.getY());
+Cell& Board::operator[](const Coordinate& c){
+	if((c.x >= tableSize) || (c.y >= tableSize)){
+		throw IllegalCoordinateException(c.x,c.y);
 	}
 	else{
-		int x = c.getX();
-		int y = c.getY();
+		int x = c.x;
+		int y = c.y;
 
 		return board[y][x];
 	}
 }
+
+uint Board::size() const{
+	return tableSize;
+}
+
+
+

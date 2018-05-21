@@ -2,7 +2,7 @@
  * IllegalCharException.h
  *
  *  Created on: May 7, 2018
- *      Author: Moshe and Nissan
+ *      Author: mcsa
  */
 
 #ifndef ILLEGALCHAREXCEPTION_H_

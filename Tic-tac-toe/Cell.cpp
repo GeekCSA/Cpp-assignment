@@ -2,7 +2,7 @@
  * cell.cpp
  *
  *  Created on: May 3, 2018
- *      Author: Moshe and Nissan
+ *      Author: mcsa
  */
 
 

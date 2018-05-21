@@ -2,7 +2,7 @@
  * Board.h
  *
  *  Created on: May 3, 2018
- *      Author: Moshe and Nissan
+ *      Author: mcsa
  */
 
 #ifndef BOARD_H_
@@ -13,33 +13,36 @@
 #include <stdlib.h>
 
 #include "Cell.h"
+#include "Coordinate.h"
 #include "IllegalCoordinateException.h"
 
 class Board{
 private:
 	//Size of the table
-	int tableSize;
+	uint tableSize;
 
 	//The table
 	Cell** board;
 
-	void free();
-	void create(int);
 
 public:
-	Board(int);
+	Board(uint);
 	Board(const Board&);
-
 	~Board();
+
+	void create(uint);
+	void free();
 
     friend std::istream & operator>>(std::istream&, const Board&);
     friend std::ostream & operator<<(std::ostream&, const Board&);
 
     Board& operator=(const Board&);
-    Board& operator=(const char) throw (IllegalCharException);
+    Board& operator=(const char);
 
-    char operator[](const Cell&) const throw (IllegalCoordinateException);
-    Cell& operator[](const Cell&) throw (IllegalCoordinateException);
+    char operator[](const Coordinate&) const;
+    Cell& operator[](const Coordinate&);
+
+	uint size() const;
 };
 
 
