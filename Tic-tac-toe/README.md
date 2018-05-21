@@ -1,4 +1,4 @@
-### The Tic-tac-toe game
+## The Tic-tac-toe game
 
 Tic-tac-toe is a social game where there are two players playing on one board.
 
@@ -11,7 +11,7 @@ In case someone performs an action prohibited by the rules, the opponent wins au
 ## the Purpose of the game
 The player's goal is to get his form in sequence on the board (from one end to the other) without the second player's form breaking his sequence.
 
-# For those interested in expanding their knowledge of the game, you can read this [link](https://en.wikipedia.org/wiki/Tic-tac-toe).
+#### For those interested in expanding their knowledge of the game, you can read this [link](https://en.wikipedia.org/wiki/Tic-tac-toe).
 
 In the code shown here there is a realization of this game.
 
