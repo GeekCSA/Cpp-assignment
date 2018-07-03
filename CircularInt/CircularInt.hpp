@@ -1,72 +1,70 @@
 // Created by Nissan and Moshe on 4/18/18.
 
 #pragma once
-#ifndef EXERCISE4_0_CIRCULARINT_H
-#define EXERCISE4_0_CIRCULARINT_H
 
 #include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
 
 class CircularInt {
-    int min,max,current, numOfElements;
+    int min, max, current, numOfElements;
 
 public:
     CircularInt();
-    CircularInt(int,int);
-    CircularInt(int,int,int);
+    CircularInt(const int,const int);
+    CircularInt(const int,const int,const int);
 
     int getCurrent() const;
 
-    int Normalization(int min, int max, int current);
+    int Normalization(const int min,const int max, int current);
 
-    CircularInt& operator=(int);
-    CircularInt& operator=(CircularInt);
+    CircularInt& operator=(const int);
+    CircularInt& operator=(const CircularInt&);
 
-    CircularInt& operator+=(int num);
+    CircularInt& operator+=(const int);
     CircularInt& operator+=(const CircularInt&);
-    friend CircularInt operator+(CircularInt&,int);
-    friend CircularInt operator+(int,CircularInt&);
-    friend CircularInt operator+(CircularInt&,CircularInt&);
+    CircularInt operator+(const int);
+    friend CircularInt operator+(const int, CircularInt&);
+    CircularInt operator+(const CircularInt&);
 
 
-    CircularInt& operator-=(int num);
+    CircularInt& operator-=(const int);
     CircularInt& operator-=(const CircularInt&);
-    friend CircularInt operator-(CircularInt&,int);
-    friend CircularInt operator-(int,CircularInt&);
-    friend CircularInt operator-(CircularInt&,CircularInt&);
+    CircularInt operator-(const int);
+    friend CircularInt operator-(const int, CircularInt&);
+    CircularInt operator-(const CircularInt&);
 
 
-    CircularInt& operator*=(int num);
+    CircularInt& operator*=(const int num);
     CircularInt& operator*=(const CircularInt&);
-    friend CircularInt operator*(CircularInt&,int);
+    CircularInt operator*(const int);
     friend CircularInt operator*(int,CircularInt&);
-    friend CircularInt operator*(CircularInt&,CircularInt&);
+    CircularInt operator*(const CircularInt&);
 
 
-    CircularInt& operator/=(int num);
+    CircularInt& operator/=(const int num);
     CircularInt& operator/=(const CircularInt&);
-    friend CircularInt operator/(CircularInt&,int);
+    CircularInt operator/(const int);
     friend CircularInt operator/(int,CircularInt&);
-    friend CircularInt operator/(CircularInt&,CircularInt&);
+    CircularInt operator/(const CircularInt&);
 
 
-    friend CircularInt operator^(CircularInt&,int);
+    CircularInt operator^(const int);
     friend CircularInt operator^(int,CircularInt&);
-    friend CircularInt operator^(CircularInt&,CircularInt&);
+    CircularInt operator^(const CircularInt&);
     CircularInt& operator^=(const CircularInt&);
-    CircularInt& operator^=(int);
+    CircularInt& operator^=(const int);
 
 
-    friend CircularInt operator%(CircularInt&,int);
+    CircularInt operator%(const int);
     friend CircularInt operator%(int,CircularInt&);
-    friend CircularInt operator%(CircularInt&,CircularInt&);
+    CircularInt operator%(const CircularInt&);
     CircularInt& operator%=(const CircularInt&);
-    CircularInt& operator%=(int);
+    CircularInt& operator%=(const int);
 
 
-    friend CircularInt operator&(CircularInt&,CircularInt&);
-    friend CircularInt operator&(CircularInt&,int);
+    CircularInt operator&(const CircularInt&);
+    CircularInt operator&(const int);
     friend CircularInt operator&(int,CircularInt&);
     CircularInt& operator&=(const CircularInt&);
     CircularInt& operator&=(const int);
@@ -81,14 +79,12 @@ public:
     friend CircularInt operator<<(int,CircularInt&);
     friend CircularInt operator<<(CircularInt&,CircularInt&);
     friend CircularInt operator<<(CircularInt&,int);
-//    CircularInt& operator<<=(const CircularInt&);
     CircularInt& operator<<=(int);
 
 
     friend CircularInt operator>>(int,CircularInt&);
     friend CircularInt operator>>(CircularInt&,CircularInt&);
     friend CircularInt operator>>(CircularInt&,int);
-//    CircularInt& operator<<=(const CircularInt&);
     CircularInt& operator>>=(int);
 
 
@@ -96,10 +92,10 @@ public:
     friend std::istream & operator>>(std::istream& is, CircularInt& ci);
 
     CircularInt& operator++();
-    const CircularInt operator++(int);
+    const CircularInt operator++(const int);
 
     CircularInt& operator--();
-    const CircularInt operator--(int);
+    const CircularInt operator--(const int);
 
     friend bool operator==(CircularInt&,CircularInt&);
     friend bool operator==(CircularInt&, int);
@@ -127,6 +123,3 @@ public:
     friend const bool operator<=(int num,const CircularInt&);
     friend const bool operator<(CircularInt&,int);
 };
-
-
-#endif EXERCISE4_0_CIRCULARINT_H
