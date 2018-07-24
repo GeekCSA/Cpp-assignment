@@ -305,16 +305,16 @@ CircularInt& CircularInt::operator%=(const CircularInt& cirInt){
 
 }
 
-CircularInt operator|(CircularInt& cirInt,int num){
+CircularInt CircularInt::operator|(const int num){
 	int temp = cirInt.current|num;
 	temp = cirInt.Normalization(cirInt.min,cirInt.max,temp);
 	return CircularInt{cirInt.min,cirInt.max,temp};
 }
-CircularInt operator|(int num, CircularInt& cirInt){
+CircularInt CircularInt::operator|(int num, CircularInt& cirInt){
 
 	return cirInt | num;
 }
-CircularInt operator|(CircularInt& cirInt,CircularInt& cirInt2){
+CircularInt operator|(const CircularInt& cirInt2){
 	int temp = cirInt.current | cirInt2.current;
 	temp = cirInt.Normalization(cirInt.min,cirInt.max,temp);
 	return CircularInt{cirInt.min,cirInt.max,temp};

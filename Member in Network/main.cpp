@@ -1,8 +1,8 @@
 #include <iostream>
+
 using namespace std;
 
 #include "Member.h"
-
 
 Member avi, beni, chana;
 

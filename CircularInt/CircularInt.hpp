@@ -70,8 +70,8 @@ public:
     CircularInt& operator&=(const int);
 
 
-    friend CircularInt operator|(CircularInt&,CircularInt&);
-    friend CircularInt operator|(CircularInt&,int);
+    CircularInt operator|(const CircularInt&);
+    CircularInt operator|(const int);
     friend CircularInt operator|(int,CircularInt&);
     CircularInt& operator|=(const CircularInt&);
     CircularInt& operator|=(const int);

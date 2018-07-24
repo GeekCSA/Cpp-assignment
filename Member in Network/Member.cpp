@@ -88,8 +88,3 @@ void Member::unfollow(Member& member){
 		member.removeFromFollowers(*this);
 	}
 }
-
-
-
-
-

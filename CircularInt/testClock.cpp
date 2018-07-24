@@ -11,7 +11,6 @@ CircularInt circularInt(1,10);
 
 TEST_CASE("===== Adding += num ====") {
 
-
     CHECK(circularInt.getCurrent() == 1);
 
     circularInt+=5;
@@ -27,7 +26,6 @@ TEST_CASE("===== Adding += num ====") {
         circularInt5+=14;
         CHECK(circularInt5.getCurrent() == 6);
     }
-
 }
 
 TEST_CASE("===== Subtracting -= num ====="){
@@ -48,18 +46,6 @@ TEST_CASE("===== Multiplication *= num ====="){
     circularInt*=3;
     CHECK(circularInt.getCurrent()==8);
 }
-
-//TEST_CASE("===== Divide /= num ====="){
-//    circularInt/=2;
-//    CHECK(circularInt.getCurrent()==4);
-//
-//    circularInt/=6;
-//    CHECK(circularInt.getCurrent()==4);
-//
-//    circularInt/=3;
-//    CHECK(circularInt.getCurrent()==8);
-//
-//}
 
 TEST_CASE("===== Adding += obj ====") {
 
@@ -247,7 +233,7 @@ TEST_CASE("===== xor ^ ====="){
 
     circularInt2 ^= circularInt;
     CHECK((circularInt2).getCurrent()==7);
-}//3
+}
 
 TEST_CASE("===== mod % ====="){
 
@@ -298,14 +284,14 @@ TEST_CASE("===== or | ====="){
 
     circularInt2 |= circularInt;
     CHECK((circularInt2).getCurrent()==7);
-}//3
+}
 
 TEST_CASE("===== greater >  ====="){
 
     CircularInt circularInt2(1,10);
     CHECK((circularInt > circularInt2) == true);
 
-}//3
+}
 
 TEST_CASE("===== greater and equal >=  ====="){
 
@@ -315,7 +301,7 @@ TEST_CASE("===== greater and equal >=  ====="){
 
     CHECK((circularInt >= circularInt2) == true);
 
-}//3
+}
 
 TEST_CASE("===== division obj/num  ====="){
 
@@ -324,49 +310,49 @@ TEST_CASE("===== division obj/num  ====="){
     CHECK ( circularInt2.getCurrent()  == 10);
     CHECK ( (circularInt2/2).getCurrent() == 5);
 
-}//3
+}
 
 TEST_CASE("===== bitwise obj<<num  ====="){
 
     CircularInt circularInt2{1,12,3};
     CHECK ( (circularInt2<<2).getCurrent()  == 12); //
-    CHECK ( (circularInt2).getCurrent()  == 3); //3
+    CHECK ( (circularInt2).getCurrent()  == 3);
 
-}//3
+}
 
 TEST_CASE("===== bitwise num<<obj  ====="){
 
     CircularInt circularInt2{1,12,3};
     CHECK ( (3<<circularInt2).getCurrent()  == 12);
-    CHECK ( (circularInt2).getCurrent()  == 3); //3
+    CHECK ( (circularInt2).getCurrent()  == 3);
 
-}//3
+}
 
 TEST_CASE("===== bitwise obj<<obj  ====="){
 
     CircularInt circularInt2{1,12,3};
     CircularInt circularInt3{1,12,2};
     CHECK ( (circularInt2<<circularInt3).getCurrent()  == 12);
-    CHECK ( (circularInt2).getCurrent()  == 3); //3
+    CHECK ( (circularInt2).getCurrent()  == 3);
 
-}//3
+}
 
 
 TEST_CASE("===== bitwise obj>>num  ====="){
 
     CircularInt circularInt2{1,12,12};
-    CHECK ( (circularInt2>>2).getCurrent()  == 3); //3
-    CHECK ( (circularInt2).getCurrent()  == 12); //3
+    CHECK ( (circularInt2>>2).getCurrent()  == 3);
+    CHECK ( (circularInt2).getCurrent()  == 12);
 
-}//3
+}
 
 TEST_CASE("===== bitwise num>>obj  ====="){
 
     CircularInt circularInt2{1,12,2};
     CHECK ( (12>>circularInt2).getCurrent()  == 3);
-    CHECK ( (circularInt2).getCurrent()  == 2); //3
+    CHECK ( (circularInt2).getCurrent()  == 2);
 
-}//3
+}
 
 TEST_CASE("===== bitwise obj>>obj  ====="){
 
@@ -374,7 +360,7 @@ TEST_CASE("===== bitwise obj>>obj  ====="){
     CircularInt circularInt3{1,12,2};
     CHECK ( (circularInt2>>circularInt3).getCurrent()  == 3);
 
-}//3
+}
 
 TEST_CASE("===== bitwise obj<<=num  ====="){
 
@@ -382,14 +368,14 @@ TEST_CASE("===== bitwise obj<<=num  ====="){
     circularInt2<<=2;
     CHECK ( (circularInt2).getCurrent()  == 12);
 
-}//3
+}
 TEST_CASE("===== bitwise obj>>=num  ====="){
 
     CircularInt circularInt2{1,12,12};
     circularInt2>>=2;
     CHECK ( (circularInt2).getCurrent()  == 3);
 
-}//3
+}
 
 TEST_CASE("===== bitwise ~obj  ====="){
 
