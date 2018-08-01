@@ -69,6 +69,8 @@ bool TicTacToe::checkWinner(const Coordinate& coord,const char c) const{
 
 void TicTacToe::play(Player& p1,Player& p2){
 
+	play_board = '.';
+
 	bool win = false;
 	char charOfWinner = '.';
 	int i = 0;

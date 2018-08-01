@@ -15,7 +15,7 @@ public:
     CircularInt(const int,const int,const int);
 
     int getCurrent() const;
-
+	
     int Normalization(const int min,const int max, int current);
 
     CircularInt& operator=(const int);
@@ -38,7 +38,7 @@ public:
     CircularInt& operator*=(const int num);
     CircularInt& operator*=(const CircularInt&);
     CircularInt operator*(const int);
-    friend CircularInt operator*(int,CircularInt&);
+    friend CircularInt operator*(int, CircularInt&);
     CircularInt operator*(const CircularInt&);
 
 
@@ -76,16 +76,16 @@ public:
     CircularInt& operator|=(const CircularInt&);
     CircularInt& operator|=(const int);
 
-    friend CircularInt operator<<(int,CircularInt&);
-    friend CircularInt operator<<(CircularInt&,CircularInt&);
-    friend CircularInt operator<<(CircularInt&,int);
+    friend CircularInt operator<<(int, CircularInt&);
+    CircularInt operator<<(const CircularInt&);
+    CircularInt operator<<(const int);
     CircularInt& operator<<=(int);
 
 
     friend CircularInt operator>>(int,CircularInt&);
-    friend CircularInt operator>>(CircularInt&,CircularInt&);
-    friend CircularInt operator>>(CircularInt&,int);
-    CircularInt& operator>>=(int);
+    CircularInt operator>>(const CircularInt&);
+    CircularInt operator>>(const int);
+    CircularInt& operator>>=(const int);
 
 
     friend std::ostream & operator<<(std::ostream& os,const CircularInt& ci);
@@ -97,29 +97,30 @@ public:
     CircularInt& operator--();
     const CircularInt operator--(const int);
 
-    friend bool operator==(CircularInt&,CircularInt&);
-    friend bool operator==(CircularInt&, int);
-    friend bool operator==(int,CircularInt&);
-    friend bool operator!=(CircularInt&,CircularInt&);
-    friend bool operator!=(CircularInt&, int);
-    friend bool operator!=(int,CircularInt&);
+    bool operator==(const CircularInt&)const;
+    bool operator==(const int)const;
+    friend bool operator==(const int,const CircularInt&);
+
+    bool operator!=(const CircularInt&)const;
+    bool operator!=(const int)const;
+    friend bool operator!=(const int,const CircularInt&);
 
     CircularInt operator-();
 
     CircularInt& operator~();
 
-    friend const bool operator>(int,CircularInt&);
-    const bool operator>(CircularInt&);
-    friend const bool operator>(CircularInt&,int);
-    const bool operator>=(CircularInt&);
-    friend const bool operator>=(const CircularInt&,int num);
-    friend const bool operator>=(int num,const CircularInt&);
+    friend const bool operator>(const int, const CircularInt&);
+    const bool operator>(const CircularInt&);
+    const bool operator>(const int);
+    const bool operator>=(const CircularInt&);
+    const bool operator>=(const int num);
+    friend const bool operator>=(const int num,const CircularInt&);
     
 
-    friend const bool operator<(int,CircularInt&);
-    const bool operator<(CircularInt&);
-    const bool operator<=(CircularInt&);
-    friend const bool operator<=(const CircularInt&,int num);
-    friend const bool operator<=(int num,const CircularInt&);
-    friend const bool operator<(CircularInt&,int);
+    friend const bool operator<(const int, const CircularInt&);
+    const bool operator<(const CircularInt&);
+    const bool operator<=(const CircularInt&);
+    const bool operator<=(const int num);
+    friend const bool operator<=(const int num, const CircularInt&);
+    const bool operator<(const int);
 };
