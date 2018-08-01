@@ -12,6 +12,6 @@ This board is written in a .txt file.
 
 The compiled file of the program receives this .txt file as input by the following command:
 
-a <example.txt /.
+.\software < example.txt
 
 Then the software creates as an output image that represents the board from the input. (For instance, you can see board.ppm)
